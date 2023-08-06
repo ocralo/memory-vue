@@ -8,7 +8,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "vue-tsc && vite build",
+		"build": "vue-tsc --noEmit && vite build",
 		"test": "vitest",
 		"test:cv": "vitest run --coverage",
 		"build-only": "vite build",

@@ -36,4 +36,4 @@ jobs:
           cache: 'npm'
       - name: Install NPM packages
         run: npm ci
-      - uses: JulienKode/pull-request-name-linter-action@v0.5.0
+      - uses: wagoid/commitlint-github-action@v5
