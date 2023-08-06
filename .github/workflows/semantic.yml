@@ -1,0 +1,39 @@
+name: Semantic PR
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+    branches: [ main ]
+
+jobs:
+  cancel-previous-build:
+    name: Cancel Previous Builds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+  semantic:
+    needs: [cancel-previous-build]
+    name: Semantic Pull Requests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Branch checkout
+        uses: actions/checkout@v2
+      - name: Install node
+        run: |
+          sudo apt-get -y update && \
+          sudo apt-get -y install --no-install-recommends nodejs && \
+          sudo apt-get -y install --no-install-recommends npm
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.17.0'
+          cache: 'npm'
+      - name: Install NPM packages
+        run: npm ci
+      - uses: JulienKode/pull-request-name-linter-action@v0.5.0

@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cancel-previous-build:
+    name: Cancel Previous Builds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+  build:
+    name: Build app
+    needs: cancel-previous-build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      actions: write
+    steps:
+      - name: Branch checkout
+        uses: actions/checkout@v3
+        with:
+            fetch-depth: 2
+      - name: Install node
+        run: |
+          sudo apt-get -y update && \
+          sudo apt-get -y install --no-install-recommends nodejs && \
+          sudo apt-get -y install --no-install-recommends npm
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.17.0'
+          cache: 'npm'
+      - name: Install NPM packages
+        run: npm ci
+      - name: Run linter
+        run: npm run lint
+      - name: Build project
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
