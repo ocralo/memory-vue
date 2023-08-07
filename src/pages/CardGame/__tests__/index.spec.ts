@@ -1,15 +1,6 @@
-import {
-	vi,
-	describe,
-	it,
-	expect,
-	afterEach,
-	beforeEach,
-	type Mock,
-} from 'vitest'
+import { vi, describe, it, expect, afterEach, beforeEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 import { createTestingPinia } from '@pinia/testing'
-import { useRouter, useRoute } from 'vue-router'
 import CardGame from '@/pages/CardGame/index.vue'
 import { useUserStore } from '@/stores/user'
 import sinon from 'sinon'
