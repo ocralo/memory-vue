@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Modal > mount > should render correctly 1`] = `
+"<div class=\\"container mx-auto\\">
+  <div class=\\"flex justify-center\\">
+    <div class=\\"absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 z-10\\" style=\\"display: none;\\">
+      <div class=\\"max-w-2xl p-6 bg-white rounded-md shadow-xl\\">
+        <div class=\\"flex items-center justify-between\\">
+          <div></div><button title=\\"close modal\\" class=\\"cursor-pointer\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"w-8 h-8 text-slate-700 cursor-pointer\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\">
+              <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z\\"></path>
+            </svg></button>
+        </div>
+        <div class=\\"mt-4\\"></div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`Modal > props > should render correctly 1`] = `
+"<div class=\\"container mx-auto\\" title=\\"Title\\" description=\\"Description\\" image=\\"Image\\" alt=\\"Alt\\" contenttype=\\"ContentType\\" visible=\\"true\\">
+  <div class=\\"flex justify-center\\">
+    <div class=\\"absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 z-10\\" style=\\"display: none;\\">
+      <div class=\\"max-w-2xl p-6 bg-white rounded-md shadow-xl\\">
+        <div class=\\"flex items-center justify-between\\">
+          <div></div><button title=\\"close modal\\" class=\\"cursor-pointer\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"w-8 h-8 text-slate-700 cursor-pointer\\" fill=\\"none\\" viewBox=\\"0 0 24 24\\" stroke=\\"currentColor\\">
+              <path stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"2\\" d=\\"M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z\\"></path>
+            </svg></button>
+        </div>
+        <div class=\\"mt-4\\"></div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
