@@ -5,7 +5,7 @@
 		</h1>
 	</header>
 	<main>
-		<form @submit.prevent="handleSubmit" class="max-w-xs w-full mx-auto">
+		<form @submit.prevent="handleSubmit" class="max-w-xs w-full mx-auto p-4">
 			<div class="mb-4">
 				<label
 					class="block text-gray-700 text-sm font-bold mb-2"
