@@ -1,6 +1,15 @@
-import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
+import {
+	vi,
+	describe,
+	it,
+	expect,
+	beforeEach,
+	afterEach,
+	type Mock,
+} from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 import sinon from 'sinon'
+import { useI18n } from 'vue-i18n'
 import { createTestingPinia } from '@pinia/testing'
 import { useUserStore } from '@/stores/user'
 
@@ -15,11 +24,16 @@ vi.mock('vue-router', () => ({
 	})),
 }))
 
+vi.mock('vue-i18n')
+
 describe('Home', () => {
 	let wrapper: any
 	let store: any
 
 	beforeEach(() => {
+		;(useI18n as Mock).mockReturnValue({
+			t: (value: string) => value,
+		})
 		wrapper = shallowMount(Home, {
 			global: {
 				plugins: [createTestingPinia({ createSpy: sinon.spy })],

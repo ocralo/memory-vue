@@ -1,16 +1,30 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest'
+import {
+	vi,
+	describe,
+	it,
+	expect,
+	beforeEach,
+	afterEach,
+	type Mock,
+} from 'vitest'
 import { createTestingPinia } from '@pinia/testing'
 import { shallowMount } from '@vue/test-utils'
+import { useI18n } from 'vue-i18n'
 import sinon from 'sinon'
 
 import { useAnimalGameStore } from '@/stores/animalsGame'
 import TableCardsFlip from '@/containers/TableCardsFlip/index.vue'
+
+vi.mock('vue-i18n')
 
 describe('TableCardsFlip', () => {
 	let wrapper: any
 	let store: any
 
 	beforeEach(() => {
+		;(useI18n as Mock).mockReturnValue({
+			t: (value: string) => value,
+		})
 		wrapper = shallowMount(TableCardsFlip, {
 			global: {
 				plugins: [createTestingPinia({ createSpy: sinon.spy })],
