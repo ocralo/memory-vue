@@ -1,0 +1,80 @@
+{
+	"entries": [
+		{
+			"meta": {
+				"name": "Lion",
+				"slug": "lion",
+				"tags": [],
+				"type": "animal",
+				"uuid": "1",
+				"space": "space-id",
+				"author": {},
+				"locale": "en",
+				"excerpt": "The king of the jungle.",
+				"private": false,
+				"targets": [],
+				"category": null,
+				"created_at": "2023-08-06T12:34:56Z",
+				"updated_at": "2023-08-06T12:34:56Z",
+				"published_at": "2023-08-06T12:34:56Z",
+				"unpublish_at": null,
+				"version_type": "published",
+				"category_name": null,
+				"category_slug": null,
+				"available_locales": ["en"]
+			},
+			"fields": {
+				"image": {
+					"url": "lion.jpg",
+					"tags": [],
+					"uuid": "image-uuid",
+					"title": "Lion Image",
+					"alt_text": "Lion Image",
+					"description": null,
+					"content_type": "image/jpeg"
+				}
+			}
+		},
+		{
+			"meta": {
+				"name": "Tiger",
+				"slug": "tiger",
+				"tags": [],
+				"type": "animal",
+				"uuid": "2",
+				"space": "space-id",
+				"author": {},
+				"locale": "en",
+				"excerpt": "The fierce predator.",
+				"private": false,
+				"targets": [],
+				"category": null,
+				"created_at": "2023-08-06T12:34:56Z",
+				"updated_at": "2023-08-06T12:34:56Z",
+				"published_at": "2023-08-06T12:34:56Z",
+				"unpublish_at": null,
+				"version_type": "published",
+				"category_name": null,
+				"category_slug": null,
+				"available_locales": ["en"]
+			},
+			"fields": {
+				"image": {
+					"url": "tiger.jpg",
+					"tags": [],
+					"uuid": "image-uuid",
+					"title": "Tiger Image",
+					"alt_text": "Tiger Image",
+					"description": null,
+					"content_type": "image/jpeg"
+				}
+			}
+		}
+	],
+	"meta": {
+		"total_entries": 2,
+		"per_page": 10,
+		"current_page": 1,
+		"total_pages": 1
+	}
+}
