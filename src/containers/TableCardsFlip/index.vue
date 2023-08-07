@@ -35,11 +35,11 @@
 		<SpinnerComponent />
 	</section>
 	<template v-else>
-		<aside class="flex justify-center gap-4 mb-6">
+		<aside class="flex flex-wrap justify-center gap-4 mb-6 p-4">
 			<h3 class="text-xl text-rose-600 font-medium uppercase">
 				<span>{{ t('tableCardFlip.error_points') }}:</span> {{ errorPoints }}
 			</h3>
-			<h3 class="text-slate-900 text-xl font-medium">/</h3>
+			<h3 class="text-slate-900 text-xl font-medium hidden sm:block">/</h3>
 			<h3 class="text-xl text-green-600 font-medium uppercase">
 				<span>{{ t('tableCardFlip.success_points') }}:</span>
 				{{ successPoints }}

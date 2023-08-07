@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts">
-	import { defineComponent, toRefs } from 'vue'
+	import { defineComponent, toRefs, watch } from 'vue'
 	import type { ModalComponent } from './interfaces'
 	export default defineComponent({
 		name: 'ModalComponent',
@@ -56,4 +56,15 @@
 	const handleClose = () => {
 		emit('close', !isOpen.value)
 	}
+
+	const handleScroll = (value: boolean) => {
+		if (value) {
+			document.body.style.overflow = 'hidden'
+			window.scrollTo(0, 0)
+		} else {
+			document.body.style.overflow = 'auto'
+		}
+	}
+
+	watch(isOpen, handleScroll)
 </script>
