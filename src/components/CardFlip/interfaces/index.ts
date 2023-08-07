@@ -5,8 +5,8 @@ export namespace CardFlipComponent {
 	}
 
 	export interface Props {
-		backCard?: Image
-		frontCard: Image
+		backCard: Image
+		frontCard?: Image
 		flip?: boolean
 	}
 }
