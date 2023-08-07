@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TableCardsFlip > mount > should render correctly 1`] = `
+"<modal-component-stub data-v-978a112d=\\"\\" isopen=\\"false\\"></modal-component-stub>
+<aside data-v-978a112d=\\"\\" class=\\"flex justify-center gap-4 mb-6\\">
+  <h3 data-v-978a112d=\\"\\" class=\\"text-xl text-rose-600 font-medium uppercase\\"><span data-v-978a112d=\\"\\">error Points:</span> 0</h3>
+  <h3 data-v-978a112d=\\"\\" class=\\"text-slate-900 text-xl font-medium\\">/</h3>
+  <h3 data-v-978a112d=\\"\\" class=\\"text-xl text-green-600 font-medium uppercase\\"> success Points: 0</h3>
+</aside>
+<!--v-if-->"
+`;
