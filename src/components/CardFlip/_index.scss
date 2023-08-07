@@ -3,9 +3,14 @@
 	height: 300px;
 	perspective: 1000px;
 	cursor: pointer;
+	position: relative;
+	box-shadow: 0 10px 20px rgba(32, 19, 19, 0.5);
 
 	&-front,
 	&-back {
+		position: absolute;
+		top: 0;
+		left: 0;
 		border: 1px solid #3b3737;
 		border-radius: 5px;
 		width: 100%;
@@ -13,5 +18,29 @@
 		backface-visibility: hidden;
 		object-fit: cover;
 		object-position: center;
+	}
+
+	.flip-enter-active,
+	.flip-leave-active {
+		transition: all 0.5s ease;
+		transform-style: preserve-3d;
+	}
+
+	.flip-enter {
+		opacity: 0;
+		z-index: 2;
+	}
+
+	.flip-enter-to {
+		opacity: 1;
+	}
+
+	.flip-leave-to {
+		opacity: 0;
+		z-index: 1;
+	}
+
+	.flip-leave {
+		opacity: 1;
 	}
 }

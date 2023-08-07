@@ -31,7 +31,7 @@ describe('CardFlit', () => {
 		})
 
 		it('should be mounted with flip in false', () => {
-			wrapper = shallowMount(CardFlit, { ...props, flip: false })
+			wrapper = shallowMount(CardFlit, { props: { ...props, flip: false } })
 			expect(wrapper.vm).toBeTruthy()
 		})
 	})

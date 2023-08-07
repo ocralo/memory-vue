@@ -1,17 +1,19 @@
 <template>
 	<button class="card" @click="handleClick">
-		<img
-			v-if="!isFlipped"
-			class="card-front bg-red-400"
-			:src="frontCard.src"
-			:alt="frontCard.name"
-			loading="lazy" />
-		<img
-			:src="backCard.src"
-			:alt="backCard.name"
-			v-else
-			class="card-back bg-slate-400 rotate-y-180"
-			loading="lazy" />
+		<transition name="flip">
+			<img
+				v-if="!isFlipped"
+				class="card-front bg-red-400"
+				:src="frontCard.src"
+				:alt="frontCard.name"
+				loading="lazy" />
+			<img
+				:src="backCard.src"
+				:alt="backCard.name"
+				v-else
+				class="card-back bg-slate-400 rotate-y-180"
+				loading="lazy" />
+		</transition>
 	</button>
 </template>
 
