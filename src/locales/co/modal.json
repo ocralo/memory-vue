@@ -1,0 +1,9 @@
+{
+	"congratulations_win": "Felicidades, ¡has ganado la partida!",
+	"congratulations_lose": "¡Has perdido la partida!",
+	"your_score": "Tu puntuación",
+	"error_points": "Puntos de error",
+	"success_points": "Puntos de acierto",
+	"exit": "Salir",
+	"close": "Cerrar modal"
+}

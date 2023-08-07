@@ -1,0 +1,12 @@
+{
+	"title": "Memory Game",
+	"user": {
+		"label": "Nombre de Usuario",
+		"placeholder": "Introduce tu nombre de usuario"
+	},
+	"pairs": {
+		"label": "Parejas",
+		"placeholder": "Introduce el número de parejas"
+	},
+	"start": "Empezar"
+}
