@@ -1,10 +1,10 @@
-import { vi, describe, it, expect, afterEach, beforeEach } from 'vitest'
+import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import { createTestingPinia } from '@pinia/testing'
-import CardGame from '@/pages/CardGame/index.vue'
-import { useUserStore } from '@/stores/user'
 import sinon from 'sinon'
-import { RoutePath } from '@/router/enum'
+import { createTestingPinia } from '@pinia/testing'
+import { useUserStore } from '@/stores/user'
+
+import Home from '@/pages/Home/index.vue'
 
 const push = vi.fn()
 
@@ -15,12 +15,12 @@ vi.mock('vue-router', () => ({
 	})),
 }))
 
-describe('CardGame', () => {
+describe('Home', () => {
 	let wrapper: any
 	let store: any
 
 	beforeEach(() => {
-		wrapper = shallowMount(CardGame, {
+		wrapper = shallowMount(Home, {
 			global: {
 				plugins: [createTestingPinia({ createSpy: sinon.spy })],
 			},
@@ -40,12 +40,18 @@ describe('CardGame', () => {
 	})
 
 	describe('methods', () => {
-		describe('handleLogout', () => {
-			it('should call logout', () => {
-				wrapper.vm.handleLogout()
-				expect(store.clearUser.calledOnce).toBeTruthy()
+		describe('handleSubmit', () => {
+			it('should not call setUser', () => {
+				wrapper.vm.handleSubmit()
+				expect(store.setUser.calledOnce).toBeFalsy()
+			})
+			it('should call setUser', () => {
+				wrapper.vm.user = 'test'
+				wrapper.vm.numberOfPairs = 4
+				wrapper.vm.handleSubmit()
+				expect(store.setUser.calledOnce).toBeTruthy()
 				expect(push).toHaveBeenCalled()
-				expect(push).toHaveBeenCalledWith(RoutePath.Home)
+				expect(push).toHaveBeenCalledWith('/card-game')
 			})
 		})
 	})
