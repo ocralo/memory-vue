@@ -338,4 +338,14 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/vue,visualstudiocode,intellij,macos,windows,node
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
+
+# End of https://www.toptal.com/developers/gitignore/api/vue,visualstudiocode,intellij,macos,windows,node,firebase
