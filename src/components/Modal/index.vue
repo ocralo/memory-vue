@@ -11,7 +11,7 @@
 							<slot name="title"></slot>
 						</div>
 						<button
-							title="close modal"
+							:title="t('modal.close')"
 							class="cursor-pointer"
 							@click="handleClose">
 							<svg
@@ -45,6 +45,9 @@
 	})
 </script>
 <script setup lang="ts">
+	import { useI18n } from 'vue-i18n'
+
+	const { t } = useI18n()
 	const emit = defineEmits(['close', 'cancel', 'success'])
 
 	const props = defineProps<ModalComponent.Props>()

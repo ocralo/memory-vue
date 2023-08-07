@@ -2,25 +2,29 @@
 	<ModalComponent :isOpen="isOpenModal" @close="handleCloseModal">
 		<template v-slot:title>
 			<h4 class="text-lg font-medium uppercase mr-4">
-				Congratulations, you have won the game!
+				{{ t('modal.congratulations_win') }}
 			</h4>
 		</template>
 		<template v-slot:content>
-			<h5 class="text-lg font-medium mb-2 ml-2">Your score:</h5>
+			<h5 class="text-lg font-medium mb-2 ml-2">
+				{{ t('modal.your_score') }}:
+			</h5>
 			<section class="mb-6 ml-4">
 				<h3 class="text-sm text-rose-600 font-medium uppercase mb-1">
-					<span>error Points:</span> {{ errorPoints }}
+					<span>{{ t('modal.error_points') }}:</span> {{ errorPoints }}
 				</h3>
 
 				<h3 class="text-sm text-green-600 font-medium uppercase">
-					success Points: {{ successPoints }}
+					<span>{{ t('modal.success_points') }}:</span> {{ successPoints }}
 				</h3>
 			</section>
 			<section>
 				<button
 					@click="handleSuccessModal"
+					:title="t('modal.close')"
+					type="button"
 					class="bg-blue-800 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-900 transition duration-300 ease-in-out w-full">
-					Exit
+					{{ t('modal.close') }}
 				</button>
 			</section>
 		</template>
@@ -33,11 +37,12 @@
 	<template v-else>
 		<aside class="flex justify-center gap-4 mb-6">
 			<h3 class="text-xl text-rose-600 font-medium uppercase">
-				<span>error Points:</span> {{ errorPoints }}
+				<span>{{ t('tableCardFlip.error_points') }}:</span> {{ errorPoints }}
 			</h3>
 			<h3 class="text-slate-900 text-xl font-medium">/</h3>
 			<h3 class="text-xl text-green-600 font-medium uppercase">
-				success Points: {{ successPoints }}
+				<span>{{ t('tableCardFlip.success_points') }}:</span>
+				{{ successPoints }}
 			</h3>
 		</aside>
 		<main v-if="animals" class="table-cards-game">
@@ -76,7 +81,10 @@
 </script>
 
 <script setup lang="ts">
+	import { useI18n } from 'vue-i18n'
 	import { PROMISE_STATE } from '@/utils/enums'
+
+	const { t } = useI18n()
 	const router = useRouter()
 
 	const PromisePending = PROMISE_STATE.PENDING
