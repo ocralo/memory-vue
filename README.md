@@ -73,7 +73,7 @@ If you wish to contribute to this project, we welcome you to submit your enhance
 
 ### License
 
-This project is distributed under the [MIT License](LICENSE). If you use this project or are inspired by it, we would appreciate acknowledgement in your final work.
+This project is distributed under the [MIT License](https://opensource.org/license/mit/). If you use this project or are inspired by it, we would appreciate acknowledgement in your final work.
 
 Thank you for being part of this memory-vue project! If you have any questions or issues, feel free to reach out to ocralo at ocralo@gmail.com. We hope you enjoy playing and developing this exciting memory game. Good luck!
 
