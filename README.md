@@ -57,16 +57,25 @@ To ensure that our game functions correctly and to maintain code quality, we hav
    npm run test
    ```
 
+### Deploy and Continuous Integration
+
+We use Firebase Hosting for deploying the application and GitHub Actions for continuous integration and deployment.
+
+- For each pull request created, GitHub Actions automatically builds and deploys a preview version of the application to a staging environment. You can access the preview version using the provided link in the pull request.
+
+- When changes are merged into the main branch, GitHub Actions will automatically deploy the latest version of the application to Firebase Hosting, making it live and accessible to users.
+
+**URL to access the deployed application:** [https://memory-vue.web.app/](https://memory-vue.web.app/)
+
 ### Contribution
 
 If you wish to contribute to this project, we welcome you to submit your enhancements via pull requests. Please ensure to follow the established commit conventions and make changes that align with the project's structure and objectives.
 
 ### License
 
-This project is distributed under the [MIT License](LICENSE). If you use this project or are inspired by it, we would appreciate acknowledgement in your final work.
+This project is distributed under the [MIT License](https://opensource.org/license/mit/). If you use this project or are inspired by it, we would appreciate acknowledgement in your final work.
 
 Thank you for being part of this memory-vue project! If you have any questions or issues, feel free to reach out to ocralo at ocralo@gmail.com. We hope you enjoy playing and developing this exciting memory game. Good luck!
-
 
 ### Developer Information
 
